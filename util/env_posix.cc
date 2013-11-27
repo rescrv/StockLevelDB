@@ -209,7 +209,7 @@ class PosixMmapFile : public WritableFile {
     bool result = true;
     if (base_ != NULL) {
 #if defined(OS_MACOSX)
-      if (msync(base_, limit_ - base_, M_SYNC) != 0) {
+      if (msync(base_, limit_ - base_, MS_SYNC) != 0) {
         result = false;
       }
 #endif
